@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Martex | Carrito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'verde-quirurgico': '#009B7D', 'azul-pantera': '#1B1464', 'azul-marino': '#0A1128' } } } }
+    </script>
+</head>
+<body class="bg-white">
+    <nav class="bg-azul-marino text-white p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-verde-quirurgico" onclick="window.location.href='index.html'">MARTEX</h1>
+            <a href="catalogo.html" class="hover:underline">Seguir comprando</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-12 px-4">
+        <h2 class="text-3xl font-bold mb-8">Resumen de compra</h2>
+        <div id="carrito-vacio" class="text-center py-10 hidden">
+            <p class="text-gray-500">Tu carrito está vacío.</p>
+        </div>
+        
+        <div id="carrito-contenido" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="md:col-span-2 space-y-4" id="items-lista">
+                </div>
+            
+            <div class="bg-gray-50 p-6 rounded-xl h-fit border border-gray-100">
+                <h3 class="text-xl font-bold mb-4">Total</h3>
+                <div class="flex justify-between text-2xl font-bold text-verde-quirurgico mb-6">
+                    <span>$</span><span id="total-precio">0.00</span>
+                </div>
+                <button onclick="procesarPago()" class="w-full bg-azul-pantera text-white py-3 rounded-lg font-bold hover:bg-azul-marino transition">Procesar Pago</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>

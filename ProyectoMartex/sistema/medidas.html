@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Medidas de uniforme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Configuracion de los colores del proyecto-->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'azul-marino': '#1E3A8A', 'azul-pantera': '#1D4ED8', 'verde-quirurjico': '#10B981' },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex h-screen">
+    <main class="flex-1 p-8 overflow-y-auto">
+
+        <div clas="max-2xl mx-auto bg-white p-6 rounded shadow">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800"> Registro de medidas </h2>
+            <form id="medidasForm" class="grid grid-cols-2 gap-4">
+                            <h4 class="text-2xl font-bold mb-3 text-gray-400"> Medidas de camisa </h2> <br>
+                <div class="cols-span-2">
+                    <label class="block text-sm font-bold">Nombre del Cliente</label>
+                    <input type="text" id="clienteNombre" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold"> Hombro</label>
+                    <input type="text" id="tallaCamisa" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold"> Busto </label>
+                    <input type="text" id="tallaPantalon" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Cintura</label>
+                    <input type="text" id="tallaZapatos" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Cadera</label>
+                    <input type="text" id="tallaGorro" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Manga Larga</label>
+                    <input type="text" id="tallaGuantes" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Grosor</label>
+                    <input type="text" id="tallaGuantes" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold">Largo total</label>
+                    <input type="text" id="tallaGuantes" class="w-full p-2 border rounded">
+                </div>
+                <div class="col-span-2">
+                    <button type="submit" class="w-full bg-azul-pantera text-white py-2 rounded hover:bg-azul-marino">Registrar Medidas</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

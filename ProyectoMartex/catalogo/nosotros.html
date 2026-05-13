@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martex | Nosotros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Tema -  colores principales de la página-->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-quirurgico': '#009B7D',
+                        'azul-pantera': '#1B1464',
+                        'azul-marino': '#0A1128',
+                    }
+                }
+            }
+        }
+    </script>
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-azul-marino flex flex-col min-h-screen">
+
+ 
+    <nav class="bg-azul-marino text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-verde-quirurgico cursor-pointer" onclick="window.location.href='index.html'">MARTEX</h1>
+            <div class="space-x-6 font-medium text-sm md:text-base">
+                <a href="index.html" class="hover:text-verde-quirurgico transition">Inicio</a>
+                <a href="nosotros.html" class="text-verde-quirurgico border-b-2 border-verde-quirurgico pb-1">Nosotros</a>
+                <a href="catalogo.html" class="hover:text-verde-quirurgico transition">Catálogo</a>
+                <a href="carrito.html" class="bg-azul-pantera hover:bg-verde-quirurgico px-4 py-2 rounded-lg transition">Carrito (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <header class="flex-grow-0 flex items-center justify-center bg-gradient-to-r from-azul-marino to-azul-pantera text-white py-20">
+        <div class="text-center px-4 max-w-3xl mx-auto">
+            <h2 class="text-5xl font-bold mb-4">Nuestra Historia</h2>
+            <p class="text-xl mb-8 opacity-90">Conoce el corazón detrás de cada uniforme: tradición, cercanía y el orgullo de Usulután.</p>
+            <a href="catalogo.html" class="bg-verde-quirurgico hover:bg-opacity-90 text-white font-bold py-3 px-10 rounded-full transition inline-block">Explorar Uniformes</a>
+        </div>
+    </header>
+
+   
+    <section class="max-w-6xl mx-auto py-16 px-4 space-y-16">
+        
+
+        <div class="text-center max-w-3xl mx-auto">
+            <span class="text-verde-quirurgico uppercase tracking-wider text-sm font-semibold">Nuestro origen</span>
+            <h3 class="text-3xl md:text-4xl font-bold text-azul-pantera mt-2 mb-6">De Usulután para todo El Salvador</h3>
+            <p class="text-gray-600 leading-relaxed text-lg">
+
+        <!-- BLOQUE 2: Mision y vision  -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Misión -->
+            <div class="bg-verde-quirurgico text-white p-8 rounded-2xl shadow-lg text-center md:text-left">
+                <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0">🎯</div>
+                <h3 class="text-xl font-bold mb-2">Misión</h3>
+                <p class="text-white/90 leading-relaxed">
+                    Equipar a profesionales de la salud y la estética con uniformes que combinen <strong>comodidad y estilo</strong>, confeccionados con los más altos estándares de calidad.
+                </p>
+            </div>
+            <!-- Visión -->
+            <div class="bg-azul-pantera text-white p-8 rounded-2xl shadow-lg text-center md:text-left">
+                <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0">🔭</div>
+                <h3 class="text-xl font-bold mb-2">Visión</h3>
+                <p class="text-white/90 leading-relaxed">
+                    Convertirnos en la marca líder de uniformes profesionales en El Salvador, llevando el nombre de <strong>Usulután</strong> como sinónimo de excelencia y confianza más allá de nuestras fronteras.
+                </p>
+            </div>
+        </div>
+  </section>
+        <br><br>
+
+
+  
+    <!--Footer-->    
+    <footer class="bg-azul-marino text-white pt-12 pb-6 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Marca e informacion -->
+            <div>
+                <h3 class="text-2xl font-bold text-verde-quirurgico mb-2">MARTEX</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Uniformes profesionales con la calidad que inspira confianza. Confeccionados en Usulután, El Salvador.
+                </p>
+                <p class="text-gray-400 text-xs mt-3">&copy; 2026 Martex Uniformes. Todos los derechos reservados.</p>
+            </div>
+
+              <!--Contactos-->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-3">Contacto</h4>
+                <ul class="space-y-2 text-gray-300 text-sm">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-map-marker-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>CALLE DR. FEDERICO PENADO FINAL, Usulutan</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-phone-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>+503 6049-7383</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-mobile-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>+503 7670-1234</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="far fa-envelope text-verde-quirurgico w-5 text-center"></i>
+                        <span>info@martexuniforms.com</span>
+                    </li>
+                </ul>
+            </div>
+
+    
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-3">Síguenos</h4>
+                <p class="text-gray-300 text-sm mb-4">Entérate de promociones y nuevos diseños.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.instagram.com/martexsv?igsh=a3Izc2YzZGNucmVl" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center text-xs text-gray-500">
+            <p>Hecho con orgullo en <span class="text-verde-quirurgico font-semibold">Usulután, El Salvador</span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

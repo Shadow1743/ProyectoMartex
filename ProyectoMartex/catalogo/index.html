@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martex | Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-quirurgico': '#009B7D',
+                        'azul-pantera': '#1B1464',
+                        'azul-marino': '#0A1128',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white text-azul-marino flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="bg-azul-marino text-white p-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-verde-quirurgico cursor-pointer" onclick="window.location.href='index.html'">MARTEX</h1>
+            <div class="space-x-6 font-medium text-sm md:text-base">
+                <a href="index.html" class="text-verde-quirurgico border-b-2 border-verde-quirurgico pb-1">Inicio</a>
+                <a href="nosotros.html" class="hover:text-verde-quirurgico transition">Nosotros</a>
+                <a href="catalogo.html" class="hover:text-verde-quirurgico transition">Catálogo</a>
+                <a href="carrito.html" class="bg-azul-pantera hover:bg-verde-quirurgico px-4 py-2 rounded-lg transition">Carrito (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="flex-grow-0 flex items-center justify-center bg-gradient-to-r from-azul-marino to-azul-pantera text-white py-20">
+        <div class="text-center px-4 max-w-3xl mx-auto">
+            <h2 class="text-5xl font-bold mb-4">Calidad que inspira confianza</h2>
+            <p class="text-xl mb-8 opacity-90">Uniformes profesionales para el sector médico y estético, diseñados y confeccionados en Usulután, El Salvador.</p>
+            <a href="catalogo.html" class="bg-verde-quirurgico hover:bg-opacity-90 text-white font-bold py-3 px-10 rounded-full transition inline-block">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: ¿Qué hacemos? y Destacados -->
+    <section class="max-w-6xl mx-auto py-16 px-4">
+        <div class="text-center mb-12">
+            <span class="text-verde-quirurgico uppercase tracking-wider text-sm font-semibold">Nuestra especialidad</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-azul-pantera mt-2 mb-4">Uniformes que unen profesionalismo y estilo</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                En <strong>Martex</strong> nos dedicamos a la confección de indumentaria de alto rendimiento. Cada prenda es fabricada con materiales resistentes, antimicrobianos y de fácil cuidado.
+            </p>
+        </div>
+
+        <!-- Título intermedio -->
+        <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold text-azul-marino">Productos Destacados</h3>
+        </div>
+
+        <!-- Grid de Productos (Corregido) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Producto 1 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/UNIVO.jpeg" alt="Uniforme Univo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme Univo</h3>
+                    <p class="text-gray-500 text-sm mb-4">Disponible en blanco y verde quirúrgico. Cuello convertible y tejido antimicrobiano.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
+                        <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/ugb.jpeg" alt="Uniforme UGB" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme UGB</h3>
+                    <p class="text-gray-500 text-sm mb-4">Uniforme médico de la UGB disponible en diferente variedades de tela de alta calidad.</p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
+                        <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+             <!--Producto3-->
+          <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+        <!-- Imagen del producto -->
+        <img src="imagenes/Scrub.jpg" alt="Uniforme UGB" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
+            Médico
+        </span>
+    </div>
+    <div class="p-5 flex flex-col flex-grow">
+        <h3 class="font-bold text-lg text-azul-marino mb-1">Scrub Enfermera Básico</h3>
+        <p class="text-gray-500 text-sm mb-4">Conjunto de chaqueta y pantalón en colores sólidos. Bolsillos amplios, tela de secado rápido.</p>
+        
+        <div class="mt-auto flex justify-between items-center">
+            <span class="text-verde-quirurgico font-bold text-lg">$20.99</span>
+            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
+                Añadir
+            </button>
+        </div>
+    </div>
+</div>
+
+        <!-- Botón Ver Todo -->
+        <div class="text-center">
+            <a href="catalogo.html" class="inline-block bg-azul-pantera hover:bg-azul-marino text-white font-semibold py-3 px-8 rounded-full transition">
+                Ver todos los uniformes <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+  <!--Footer-->    
+    <footer class="bg-azul-marino text-white pt-12 pb-6 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Marca e informacion -->
+            <div>
+                <h3 class="text-2xl font-bold text-verde-quirurgico mb-2">MARTEX</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Uniformes profesionales con la calidad que inspira confianza. Confeccionados en Usulután, El Salvador.
+                </p>
+                <p class="text-gray-400 text-xs mt-3">&copy; 2026 Martex Uniformes. Todos los derechos reservados.</p>
+            </div>
+
+              <!--Contactos-->
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-3">Contacto</h4>
+                <ul class="space-y-2 text-gray-300 text-sm">
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-map-marker-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>CALLE DR. FEDERICO PENADO FINAL, Usulutan</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-phone-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>+503 6049-7383</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-mobile-alt text-verde-quirurgico w-5 text-center"></i>
+                        <span>+503 7670-1234</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <i class="far fa-envelope text-verde-quirurgico w-5 text-center"></i>
+                        <span>info@martexuniforms.com</span>
+                    </li>
+                </ul>
+            </div>
+
+    
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-3">Síguenos</h4>
+                <p class="text-gray-300 text-sm mb-4">Entérate de promociones y nuevos diseños.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.instagram.com/martexsv?igsh=a3Izc2YzZGNucmVl" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://web.whatsapp.com/" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-azul-pantera hover:bg-verde-quirurgico rounded-full flex items-center justify-center transition" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center text-xs text-gray-500">
+            <p>Hecho con orgullo en <span class="text-verde-quirurgico font-semibold">Usulután, El Salvador</span> 🇸🇻</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
