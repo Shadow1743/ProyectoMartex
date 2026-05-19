@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Martex | Procesar Pago</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-quirurgico': '#009B7D',
+                        'azul-pantera': '#1B1464',
+                        'azul-marino': '#0A1128'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-azul-marino text-white p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-verde-quirurgico cursor-pointer" onclick="window.location.href='index.html'">MARTEX</h1>
+            <a href="catalogo.html" class="hover:underline text-sm">Seguir comprando</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-12 px-4 flex-1 w-full">
+        <h2 class="text-3xl font-bold mb-8">Procesar pago</h2>
+
+        <!-- Carrito vacío -->
+        <div id="carrito-vacio" class="text-center py-10 hidden">
+            <p class="text-gray-500 text-lg">Tu carrito está vacío.</p>
+            <a href="catalogo.html" class="inline-block mt-4 text-verde-quirurgico hover:underline font-semibold">Ir a la tienda</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div id="carrito-contenido" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Columna izquierda: Resumen de items + método de pago -->
+            <div class="md:col-span-2 space-y-8">
+                <!-- Resumen de items -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-azul-marino">Resumen de compra</h3>
+                    <div id="items-lista" class="space-y-3">
+                        <!-- Se llena dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Selección de método de pago -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-azul-marino">Método de pago</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button id="btn-efectivo"
+                            class="border-2 border-gray-200 rounded-xl p-4 text-center hover:border-verde-quirurgico transition-all duration-200 focus:outline-none"
+                            onclick="seleccionarMetodo('efectivo')">
+                            <div class="text-3xl mb-2">💵</div>
+                            <span class="font-semibold text-azul-marino">Efectivo</span>
+                            <p class="text-xs text-gray-500 mt-1">Paga al recibir tu pedido</p>
+                        </button>
+                        <button id="btn-tarjeta"
+                            class="border-2 border-gray-200 rounded-xl p-4 text-center hover:border-verde-quirurgico transition-all duration-200 focus:outline-none"
+                            onclick="seleccionarMetodo('tarjeta')">
+                            <div class="text-3xl mb-2">💳</div>
+                            <span class="font-semibold text-azul-marino">Tarjeta</span>
+                            <p class="text-xs text-gray-500 mt-1">Débito o crédito</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario de tarjeta (oculto por defecto) -->
+                <div id="formulario-tarjeta" class="hidden space-y-4 bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-azul-marino mb-2">Datos de la tarjeta</h4>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Número de tarjeta</label>
+                        <input type="text" id="numero-tarjeta" placeholder="1234 5678 9012 3456" maxlength="19"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-verde-quirurgico focus:border-verde-quirurgico outline-none transition">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de expiración</label>
+                            <input type="text" id="fecha-expiracion" placeholder="MM/AA" maxlength="5"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-verde-quirurgico focus:border-verde-quirurgico outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="4"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-verde-quirurgico focus:border-verde-quirurgico outline-none transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nombre del titular</label>
+                        <input type="text" id="nombre-titular" placeholder="Como aparece en la tarjeta"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-verde-quirurgico focus:border-verde-quirurgico outline-none transition">
+                    </div>
+                </div>
+
+                <!-- Mensaje para efectivo (oculto por defecto) -->
+                <div id="mensaje-efectivo" class="hidden bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+                    <p class="text-green-800 font-medium">Pagarás en efectivo al momento de recibir tu pedido.</p>
+                    <p class="text-green-600 text-sm mt-1">Ten el monto exacto listo para agilizar la entrega.</p>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Total y botón de confirmación -->
+            <div class="bg-gray-50 p-6 rounded-xl h-fit border border-gray-100 sticky top-6">
+                <h3 class="text-xl font-bold mb-4 text-azul-marino">Total</h3>
+                <div class="flex justify-between text-2xl font-bold text-verde-quirurgico mb-6">
+                    <span>$</span><span id="total-precio">0.00</span>
+                </div>
+                <button id="btn-confirmar-pago"
+                    class="w-full bg-azul-pantera text-white py-3 rounded-lg font-bold hover:bg-azul-marino transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    onclick="confirmarPago()">
+                    Confirmar Pago
+                </button>
+                <p id="metodo-seleccionado-indicador" class="text-center text-sm text-gray-500 mt-3">Selecciona un método de pago</p>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación -->
+        <div id="modal-exito" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl">
+                <div class="text-5xl mb-4">✅</div>
+                <h3 class="text-2xl font-bold text-azul-marino mb-2">¡Pago confirmado!</h3>
+                <p id="mensaje-modal" class="text-gray-600 mb-6"></p>
+                <button onclick="window.location.href='catalogo.html'"
+                    class="w-full bg-verde-quirurgico text-white py-3 rounded-lg font-bold hover:opacity-90 transition">
+                    Volver a la tienda
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/pago.js"></script>
+</body>
+</html>
