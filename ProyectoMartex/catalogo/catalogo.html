@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martex | Catálogo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-     <script src="componentes/navbar.js" defer></script>
+    <script src="componentes/navbar.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -23,10 +23,7 @@
 </head>
 <body class="bg-white text-azul-marino flex flex-col min-h-screen">
 
-  <main-navbar></main-navbar>
-
-    <main>
-        </main>
+    <main-navbar></main-navbar>
 
     <header class="flex-grow-0 flex items-center justify-center bg-gradient-to-r from-azul-marino to-azul-pantera text-white py-20">
         <div class="text-center px-4 max-w-3xl mx-auto">
@@ -38,143 +35,154 @@
         </div>
     </header>
 
-    <!-- SECCIÓN DEL CATÁLOGO -->
     <section class="max-w-6xl mx-auto py-16 px-4" id="productos-grid">
         <div class="text-center mb-12">
             <span class="text-verde-quirurgico uppercase tracking-wider text-sm font-semibold">Elige tu estilo</span>
             <h3 class="text-3xl md:text-4xl font-bold text-azul-pantera mt-2">Uniformes para cada profesión</h3>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/images.jpeg" alt="Uniforme Univo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme Univo</h3>
-        <p class="text-gray-500 text-sm mb-4">Disponible en blanco y verde quirúrgico. Cuello convertible, bolsillos reforzados, tejido antimicrobiano.</p>
+
         
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            
-    <!--Producto2-->
-          <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/ugb.jpeg" alt="Uniforme UGB" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme UGB</h3>
-        <p class="text-gray-500 text-sm mb-4">Uniforme médico de la UGB disponible en diferente variedades de tela</p>
-        
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-  </div>
+            <!-- Producto 1 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/conjunto de uniforme médico.jpeg" alt="scrub Enfermera" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Scrub Enfermera Básico</h3>
+                    <p class="text-gray-500 text-sm mb-4">Conjunto de chaqueta y pantalón en colores sólidos. Bolsillos amplios, tela de secado rápido.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-enfermera" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
 
-  <!--Producto3-->
-          <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/Scrub.jpg" alt="scrub Enfermera" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1">Scrub Enfermera Básico</h3>
-        <p class="text-gray-500 text-sm mb-4">Conjunto de chaqueta y pantalón en colores sólidos. Bolsillos amplios, tela de secado rápido.</p>
-        
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$20.99</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-</div>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$20.99</span>
+                        <button onclick="agregarAlCarrito('Scrub Enfermera Básico', 20.99, 'talla-enfermera')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Producto 2 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/Camisa(scrub)colorAzul.jpeg" alt="Camisa Azul Marino" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Camisa Scrub Azul Marino</h3>
+                    <p class="text-gray-500 text-sm mb-4">Camisa médica cuello en V clásica, 3 bolsillos funcionales, ideal para largas jornadas.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-azul-marino" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
 
-<!--Producto4-->
- <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/9ca32d7495c76652d396849d8c76bb0b.jpg" alt="Uniforme médico" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme de salón de belleza</h3>
-        <p class="text-gray-500 text-sm mb-4"></p>
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$25.99</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-</div>   
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$18.99</span>
+                        <button onclick="agregarAlCarrito('Camisa Scrub Azul Marino', 18.99, 'talla-azul-marino')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>   
 
-<!--Producto5-->
- <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/" alt="Uniforme de sala de bellleza" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1"></h3>
-        <p class="text-gray-500 text-sm mb-4"></p>
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-</div>   
+            <!-- Producto 3 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/Camisa de uniforme color gris.jpeg" alt="Camisa Gris NiaaHinn" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Camisa Scrub Gris NiaaHinn</h3>
+                    <p class="text-gray-500 text-sm mb-4">Diseño moderno con cuello en V, costuras reforzadas y detalle de marca en el bolsillo superior.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-gris" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
 
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$22.50</span>
+                        <button onclick="agregarAlCarrito('Camisa Scrub Gris NiaaHinn', 22.50, 'talla-gris')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>   
 
-<!--Producto6-->
- <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/" alt="Uniforme médico" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1"></h3>
-        <p class="text-gray-500 text-sm mb-4"></p>
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
-        </div>
-    </div>
-</div>   
+            <!-- Producto 4 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/Camisa (scrug) color  verde esmeralda.jpeg" alt="Camisa Verde Esmeralda" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Camisa Scrub Verde Esmeralda</h3>
+                    <p class="text-gray-500 text-sm mb-4">Elegante color verde esmeralda con bolsillo frontal asegurado por cremallera metálica.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-verde" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$24.00</span>
+                        <button onclick="agregarAlCarrito('Camisa Scrub Verde Esmeralda', 24.00, 'talla-verde')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/conjunto de uniforme médico.jpeg.jpeg" alt="Bata Blanca y Pantalón" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico / Estética</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Conjunto Bata Médica</h3>
+                    <p class="text-gray-500 text-sm mb-4">Incluye abrigo médico blanco de manga larga y pantalón tipo jogger gris. Estilo profesional completo.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-bata" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$45.00</span>
+                        <button onclick="agregarAlCarrito('Conjunto Bata Médica', 45.00, 'talla-bata')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>
+                  
+                </div>
+            </div>
+
+        </div> 
 
         <div class="text-center mt-12">
             <a href="carrito.html" class="inline-block bg-azul-pantera hover:bg-azul-marino text-white font-semibold py-3 px-8 rounded-full transition">
@@ -183,7 +191,53 @@
         </div>
     </section>
 
- <div id="footer-container"></div>
-<script src="componentes/footer.js"></script>
+    <!-- Modal del Carrito -->
+    <div id="modal-carrito" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 transition-opacity">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform transition-all text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-2xl text-verde-quirurgico"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-azul-marino mb-2">¡Producto añadido!</h3>
+            <p id="modal-producto-texto" class="text-gray-600 mb-6">Has añadido el producto a tu carrito exitosamente.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="cerrarModal()" class="px-6 py-2 border-2 border-gray-200 text-gray-600 font-semibold rounded-full hover:bg-gray-50 transition w-full sm:w-auto">
+                    Seguir comprando
+                </button>
+                <button onclick="irAPago('pago.html')" class="px-6 py-2 bg-verde-quirurgico text-white font-semibold rounded-full hover:bg-opacity-90 transition w-full sm:w-auto">
+                    Ir a pagar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="componentes/footer.js"></script>
+    <script src="js/carrito.js"></script>
+
+    <script>
+        function agregarAlCarrito(nombre, precio, idTalla) {
+            const selectTalla = document.getElementById(idTalla);
+            const tallaSeleccionada = selectTalla ? selectTalla.value : 'M';
+            
+            
+            document.getElementById('modal-producto-texto').innerText = `Has añadido "${nombre}" (Talla: ${tallaSeleccionada}) a tu carrito por $${precio}.`;
+            
+            // Mostrar modal cambiando clases de Tailwind
+            const modal = document.getElementById('modal-carrito');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal-carrito');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function irAPago() {
+        window.location.href = "pago.html";
+        }
+    </script>
 </body>
 </html>

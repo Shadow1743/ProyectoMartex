@@ -53,19 +53,29 @@
 
         <!-- Grid de Productos (Corregido) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            
-            <!-- Producto 1 -->
+     <!-- Producto 1 -->
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
                 <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-                    <img src="imagenes/UNIVO.jpeg" alt="Uniforme Univo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="imagenes/conjunto de uniforme médico.jpeg" alt="scrub Enfermera" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
                 </div>
                 <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme Univo</h3>
-                    <p class="text-gray-500 text-sm mb-4">Disponible en blanco y verde quirúrgico. Cuello convertible y tejido antimicrobiano.</p>
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Scrub Enfermera Básico</h3>
+                    <p class="text-gray-500 text-sm mb-4">Conjunto de chaqueta y pantalón en colores sólidos. Bolsillos amplios, tela de secado rápido.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-enfermera" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
+
                     <div class="mt-auto flex justify-between items-center">
-                        <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
-                        <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">Añadir</button>
+                        <span class="text-verde-quirurgico font-bold text-lg">$20.99</span>
+                        <button onclick="agregarAlCarrito('Scrub Enfermera Básico', 20.99, 'talla-enfermera')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
                     </div>
                 </div>
             </div>
@@ -73,42 +83,55 @@
             <!-- Producto 2 -->
             <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
                 <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-                    <img src="imagenes/ugb.jpeg" alt="Uniforme UGB" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="imagenes/Camisa(scrub)colorAzul.jpeg" alt="Camisa Azul Marino" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
                 </div>
                 <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-lg text-azul-marino mb-1">Uniforme UGB</h3>
-                    <p class="text-gray-500 text-sm mb-4">Uniforme médico de la UGB disponible en diferente variedades de tela de alta calidad.</p>
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Camisa Scrub Azul Marino</h3>
+                    <p class="text-gray-500 text-sm mb-4">Camisa médica cuello en V clásica, 3 bolsillos funcionales, ideal para largas jornadas.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-azul-marino" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
+
                     <div class="mt-auto flex justify-between items-center">
-                        <span class="text-verde-quirurgico font-bold text-lg">$30.99</span>
-                        <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">Añadir</button>
+                        <span class="text-verde-quirurgico font-bold text-lg">$18.99</span>
+                        <button onclick="agregarAlCarrito('Camisa Scrub Azul Marino', 18.99, 'talla-azul-marino')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
                     </div>
                 </div>
-            </div>
+            </div>   
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
+                <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <img src="imagenes/Camisa de uniforme color gris.jpeg" alt="Camisa Gris NiaaHinn" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">Médico</span>
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <h3 class="font-bold text-lg text-azul-marino mb-1">Camisa Scrub Gris NiaaHinn</h3>
+                    <p class="text-gray-500 text-sm mb-4">Diseño moderno con cuello en V, costuras reforzadas y detalle de marca en el bolsillo superior.</p>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Seleccionar Talla:</label>
+                        <select id="talla-gris" class="w-full bg-gray-50 border border-gray-200 text-azul-marino text-sm rounded-lg focus:ring-verde-quirurgico focus:border-verde-quirurgico p-2 cursor-pointer">
+                            <option value="S">S (Small)</option>
+                            <option value="M" selected>M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (X-Large)</option>
+                        </select>
+                    </div>
 
-             <!--Producto3-->
-          <div class="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group hover:shadow-xl transition flex flex-col">
-    <div class="h-48 bg-gray-100 flex items-center justify-center relative overflow-hidden">
-        <!-- Imagen del producto -->
-        <img src="imagenes/Scrub.jpg" alt="Uniforme UGB" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-        <span class="absolute top-3 right-3 bg-verde-quirurgico text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-10">
-            Médico
-        </span>
-    </div>
-    <div class="p-5 flex flex-col flex-grow">
-        <h3 class="font-bold text-lg text-azul-marino mb-1">Scrub Enfermera Básico</h3>
-        <p class="text-gray-500 text-sm mb-4">Conjunto de chaqueta y pantalón en colores sólidos. Bolsillos amplios, tela de secado rápido.</p>
-        
-        <div class="mt-auto flex justify-between items-center">
-            <span class="text-verde-quirurgico font-bold text-lg">$20.99</span>
-            <button class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-3 py-1 rounded-lg text-sm font-medium transition">
-                Añadir
-            </button>
+                    <div class="mt-auto flex justify-between items-center">
+                        <span class="text-verde-quirurgico font-bold text-lg">$22.50</span>
+                        <button onclick="agregarAlCarrito('Camisa Scrub Gris NiaaHinn', 22.50, 'talla-gris')" class="text-azul-pantera hover:bg-azul-pantera hover:text-white border border-azul-pantera px-4 py-1.5 rounded-lg text-sm font-medium transition">Añadir</button>
+                    </div>
+                </div>
+            </div>   
         </div>
-    </div>
-</div>
-
-        <!-- Botón Ver Todo -->
         <div class="text-center">
             <a href="catalogo.html" class="inline-block bg-azul-pantera hover:bg-azul-marino text-white font-semibold py-3 px-8 rounded-full transition">
                 Ver todos los uniformes <i class="fas fa-arrow-right ml-2"></i>

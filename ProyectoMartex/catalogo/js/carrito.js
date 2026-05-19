@@ -1,48 +1,60 @@
-function renderizarCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('martex-carrito')) || [];
-    const lista = document.getElementById('items-lista');
-    const totalElem = document.getElementById('total-precio');
-    
-    if (carrito.length === 0) {
-        document.getElementById('carrito-vacio').classList.remove('hidden');
-        document.getElementById('carrito-contenido').classList.add('hidden');
-        return;
-    }
+/**
+ * Función para manejar el clic en el botón "Añadir" capturando la talla
+ * @param {string} nombreProducto - El nombre del producto seleccionado
+ * @param {number} precioProducto - El precio del producto
+ * @param {string} idSelectTalla - El id del elemento HTML <select> de la talla
+ */
+function agregarAlCarrito(nombreProducto, precioProducto, idSelectTalla) {
+    // Obtener la talla seleccionada del elemento select correspondiente
+    const selectElement = document.getElementById(idSelectTalla);
+    const tallaSeleccionada = selectElement ? selectElement.value : 'M';
 
-    lista.innerHTML = '';
-    let total = 0;
+    // Obtener el estado actual del carrito en localStorage o inicializarlo vacío
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    carrito.forEach((item, index) => {
-        total += item.precio;
-        lista.innerHTML += `
-            <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <div>
-                    <h4 class="font-bold">${item.nombre}</h4>
-                    <p class="text-sm text-gray-500">${item.tela}</p>
-                </div>
-                <div class="text-right">
-                    <p class="font-bold text-azul-pantera">$${item.precio.toFixed(2)}</p>
-                    <button onclick="removerItem(${index})" class="text-xs text-red-500 underline">Quitar</button>
-                </div>
-            </div>
-        `;
-    });
+    // Estructurar el nuevo producto incluyendo la propiedad 'talla'
+    const nuevoProducto = {
+        nombre: nombreProducto,
+        precio: precioProducto,
+        talla: tallaSeleccionada,
+        cantidad: 1
+    };
 
-    totalElem.innerText = total.toFixed(2);
+    // Agregar el producto al arreglo del carrito
+    carrito.push(nuevoProducto);
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    console.log(`Guardando en carrito: ${nombreProducto} - Talla: ${tallaSeleccionada} - $${precioProducto}`);
+
+    // Seleccionar los elementos de control del modal de confirmación
+    const modal = document.getElementById('modal-carrito');
+    const textoModal = document.getElementById('modal-producto-texto');
+
+    // Personalizar el texto interno del modal para mostrar los detalles elegidos
+    textoModal.innerHTML = `Has añadido <strong>${nombreProducto}</strong> (Talla: <strong>${tallaSeleccionada}</strong>) a tu carrito exitosamente.`;
+
+    // Hacer visible el modal cambiando las clases de Tailwind CSS
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
 }
 
-window.removerItem = (index) => {
-    const carrito = JSON.parse(localStorage.getItem('martex-carrito')) || [];
-    carrito.splice(index, 1);
-    localStorage.setItem('martex-carrito', JSON.stringify(carrito));
-    renderizarCarrito();
-    actualizarContador();
-};
+/**
+ * Función para ocultar el modal y permitir al usuario seguir navegando en el catálogo
+ */
+function cerrarModal() {
+    const modal = document.getElementById('modal-carrito');
+    
+    // Ocultar el modal regresando a la configuración por defecto
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}
 
-window.procesarPago = () => {
-    alert("🚀 Conectando con la pasarela de pagos...\n\n¡Gracias por tu compra en Martex!");
-    localStorage.removeItem('martex-carrito');
-    window.location.href = 'index.html';
-};
-
-renderizarCarrito();
+/**
+ * Función para redirigir directamente al flujo de procesamiento de pago
+ */
+function irAPago() {
+    // Redirigir hacia la página encargada de procesar el pago final
+    window.location.href = 'pago.html';
+}
